@@ -104,7 +104,7 @@ export default function App() {
     }
 
     try {
-      const response = await fetch("const API_BASE_URL = "https://insideiim-backend-0iyg.onrender.com";", {
+      const response = await fetch("const API_BASE_URL = "https://insideiim-backend-0iyg.onrender.com",{
         method: "POST",
         headers: {
           "Content-Type": "application/json"
