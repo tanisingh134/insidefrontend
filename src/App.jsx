@@ -104,7 +104,7 @@ export default function App() {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/research", {
+      const response = await fetch("const API_BASE_URL = "https://insideiim-backend-0iyg.onrender.com";", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
