@@ -103,21 +103,30 @@ export default function App() {
       return;
     }
 
-    try {
-      const response = await fetch("const API_BASE_URL = "https://insideiim-backend-0iyg.onrender.com",{
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
+   try {
+  const response = await fetch(
+    "https://insideiim-backend-0iyg.onrender.com/api/research",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        companyName: companyName.trim(),
+        provider: config.provider,
+        apiKeys: {
+          openaiApiKey: config.openaiApiKey,
+          geminiApiKey: config.geminiApiKey,
         },
-        body: JSON.stringify({
-          companyName: companyName.trim(),
-          provider: config.provider,
-          apiKeys: {
-            openaiApiKey: config.openaiApiKey,
-            geminiApiKey: config.geminiApiKey
-          }
-        })
-      });
+      }),
+    }
+  );
+
+  const data = await response.json();
+  console.log(data);
+} catch (error) {
+  console.error(error);
+}
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
